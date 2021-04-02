@@ -4,21 +4,35 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:serve": "vue-cli-service electron:serve",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps",
+    "install": "npm rebuild"
   },
+  "main": "background.js",
   "dependencies": {
+    "@serialport/bindings": "^9.0.7",
     "core-js": "^3.6.5",
+    "element-plus": "^1.0.2-beta.36",
+    "serialport": "^9.0.7",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0"
   },
   "devDependencies": {
+    "@types/electron-devtools-installer": "^2.2.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
+    "electron": "^11.4.1",
+    "electron-devtools-installer": "^3.1.0",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "typescript": "~4.1.5"
+    "typescript": "~4.1.5",
+    "vue-cli-plugin-electron-builder": "^2.0.0-rc.6",
+    "@types/serialport": "^8.0.1"
   },
   "browserslist": [
     "> 1%",
